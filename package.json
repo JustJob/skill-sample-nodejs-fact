@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "mkdir -p dist && rm -f dist/deployPackage.zip && zip -r dist/deployPackage.zip . -x *.git* *.idea* ./dist* .DS_Store",
-    "update-lambda-function": "aws lambda update-function-code --function-name [arn] --zip-file fileb://dist/deployPackage.zip",
+    "update-lambda-function": "aws lambda update-function-code --function-name arn:aws:lambda:us-east-1:590456368598:function:dicerollfunction --zip-file fileb://dist/deployPackage.zip",
     "deploy": "npm run build && npm run update-lambda-function"
   },
   "author": "",
@@ -13,6 +13,7 @@
   "dependencies": {
     "ask-sdk-core": "^2.0.0",
     "ask-sdk-model": "^1.0.0",
+    "aws-sdk": "^2.747.0",
     "i18next": "^15.0.5"
   }
 }
